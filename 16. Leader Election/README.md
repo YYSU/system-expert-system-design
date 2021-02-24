@@ -1,5 +1,5 @@
 # Daigram
-[diagram]()
+![diagram](https://github.com/YYSU/system-expert-system-design/blob/main/16.%20Leader%20Election/Leader%20Election.png?raw=true)
 
 
 # How to use it
