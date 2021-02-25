@@ -1,7 +1,7 @@
-![]()
+![](https://github.com/YYSU/system-expert-system-design/blob/main/18.%20Polling%20And%20Streaming/Polling%20And%20Streaming.png?raw=true)
 
 # How to run this ? 
-1. Open four terminal to simulate one server two clients (Jim & Bob)
+1. Open three terminal to simulate one server two clients (Jim & Bob)
 
 - server : node server.js
 Listening on port 3001
@@ -12,46 +12,52 @@ Listening on port 3001
 - Client Bob (polling) : NODE=poll NAME=Bob node client.js
 > chat room: welcome
 
-- client send request 
 
-curl --header 'Content-type: application/json' --data '{"data": "This is ddata."}' localhost:8000/a
+
+2. When I type something in Client Bob, Jim will get the messages immediately , cause Jim use streaming
+
+- Client Bob (polling) : NODE=poll NAME=Bob node client.js
 ```
-Reverse proxy 
-Forwarding to: http://localhost:3001/a.
-
-Sharding B
-Soring data at key a.
-```
-
-curl --header 'Content-type: application/json' --data '{"data": "This is ddata."}' localhost:8000/b
-```
-Reverse proxy 
-Forwarding to: http://localhost:3001/b.
-
-Sharding A
-Soring data at key b.
+> chat room: Welcome
+hi
+how are u, Jim
 ```
 
-curl -w "\n" localhost:8000/b
+- Client Jim (stream) : NODE=stream NAME=Jim node client.js
 ```
-Reverse proxy 
-Forwarding to: http://localhost:3001/b.
-
-Sharding A
-Retrieving data from key b.
-
-client
-This is ddata.
+> chat room: Welcome
+> Bob: hi
+> Bob: how are u, Jim
 ```
 
-curl -w "\n" localhost:8000/a
-```
-Reverse proxy 
-Forwarding to: http://localhost:3001/a.
+3. When I type something in Client Jim, Bob will not get the messages immediately , cause Jim use polling
 
-Sharding B
-Retrieving data from key a.
-
-client
-This is ddata.
+- Client Jim (stream) : NODE=stream NAME=Jim node client.js
 ```
+> chat room: Welcome
+> Bob: hi
+> Bob: how are u, Jim
+hey
+asdf
+asdf
+asdf
+asd
+fas
+```
+
+- Client Bob (polling) : NODE=poll NAME=Bob node client.js
+```
+> chat room: Welcome
+hi
+how are u, Jim
+> Jim: hey
+> Jim: asdf
+> Jim: asdf
+> Jim: asdf
+> Jim: asd
+> Jim: fas
+```
+
+
+4. Then you can open a new terminal and use the script to see more clearly : 
+```(for i in `seq 1 10000`; do sleep 1; echo $i; done) | NAME=Bot node client.js```
