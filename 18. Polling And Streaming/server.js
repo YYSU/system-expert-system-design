@@ -30,7 +30,7 @@ app.post('/messages', (req, res) => {
 app.ws('/messages', socket => {
     sockets.push(socket);
 
-    socket.on('clost', () => {
+    socket.on('close', () => {
         sockets.splice(sockets.indexOf(socket), 1);
     })
 });
