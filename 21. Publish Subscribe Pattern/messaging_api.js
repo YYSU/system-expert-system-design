@@ -6,7 +6,7 @@ function publish(message, topicId) {
 }
 
 function subscribe(topicId) {
-    return new WebSocket('ws://localhost:3001/${topicId}');
+    return new WebSocket(`ws://localhost:3001/${topicId}`);
 }
 
 module.exports.publish = publish;

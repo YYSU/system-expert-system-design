@@ -8,8 +8,8 @@ const terminal = readline.createInterface({
 });
 
 terminal.on('line', text => {
-    const NAME = process.env.NAME;
+    const name = process.env.NAME;
     
-    const message = {NAME, text};
+    const message = {name, text};
     messagingApi.publish(message, TOPIC_ID);
 });
