@@ -1,5 +1,6 @@
 # system-expert-system-design
-This is just my personal note.
+When I prepared my System design interview, I tried to code examples by following SystemExpert courses.
+Please refer to each folder to see the example:
 
 1. Introduction (Currently, no code example)
 2. What Are Design Fundamentals?
