@@ -1,4 +1,4 @@
-![](https://upload.wikimedia.org/wikipedia/commons/7/7a/Consistent_hashing.pdf)
+![](https://github.com/YYSU/system-expert-system-design/blob/main/11.%20Hashing/Consistent_hashing.jpg?raw=true)
 
 # How to use it
 ```
