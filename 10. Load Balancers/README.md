@@ -1,4 +1,4 @@
-![](https://github.com/YYSU/system-expert-system-design/blob/main/11.%20Hashing/Consistent_hashing.jpg?raw=true)
+![](https://github.com/YYSU/system-expert-system-design/blob/main/10.%20Load%20Balancers/load-balancer.jpeg?raw=true)
 
 # How to use it
 1. Run Nginx 
