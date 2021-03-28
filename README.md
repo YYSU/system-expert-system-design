@@ -3,13 +3,13 @@ When I prepared my System design interview, I tried to code examples by followin
 Please refer to each folder to see the example:
 
 1. Introduction (Currently, no code example)
-2. What Are Design Fundamentals?
-3. Client—Server Model
-4. Network Protocols
-5. Storage
-6. Latency And Throughput
-7. Availability
-8. Caching
+2. What Are Design Fundamentals? (Currently, no code example)
+3. Client—Server Model (Currently, no code example)
+4. Network Protocols (Currently, no code example)
+5. Storage (Currently, no code example)
+6. Latency And Throughput (Currently, no code example)
+7. Availability (Currently, no code example)
+8. Caching (Currently, no code example)
 9. Proxies
 10. Load Balancers
 11. Hashing
